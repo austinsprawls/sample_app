@@ -16,6 +16,11 @@ describe "Static Pages" do
         end
     end
 
+    it "should not have a custom page title" do
+        visit '/static_pages/home'
+        expect(page).not_to have_title(" | Home")
+    end
+
     describe "Help page" do
         it "should have the content 'Help'" do
             visit '/static_pages/help'
